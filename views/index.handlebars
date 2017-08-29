@@ -1,0 +1,43 @@
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <tr>
+          <th>Uneaten Burgers</th>
+          <th>Option</th>
+        </tr>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+        <tr>  
+          <td>{{this.burger}}</td>
+          <td>
+              <form action="/{{this.id}}?_method=PUT" method="POST">
+                <button type="submit">Devour!</button>
+              </form>
+          </td> 
+        </tr>  
+          {{/unless}}
+        {{/each}}
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table">
+        <tr>
+          <th>Devoured Burgers</th>
+          <th>Option</th>
+        </tr>
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <tr>  
+          <td>{{this.burger}}</td>
+          <td>
+              <form action="/{{this.id}}?_method=DELETE" method="POST">
+                <button type="submit">Delete!</button>
+              </form>
+          </td> 
+        </tr>  
+        {{/if}}
+        {{/each}}
+      </table>
+    </div>
+  </div>
+
