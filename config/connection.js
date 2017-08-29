@@ -12,14 +12,6 @@ if(process.env.JAWSDB_URL){
   });
 }
 
-/*For deployment on Heroku
-var connection = mysql.createConnection({
-  host: "iwqrvsv8e5fz4uni.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  port: 3306,
-  user: "o5kz6ydmdvcdwz8e",
-  password: "f00twxk0pjhx5x1b",
-  database: "burger_db"
-});*/
 
 connection.connect(function(err) {
   if (err) {
