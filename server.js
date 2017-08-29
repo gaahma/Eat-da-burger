@@ -4,13 +4,13 @@ var express = require("express"),
 bodyParser = require("body-parser"),
 exphbs = require("express-handlebars"),
 methodOverride = require("method-override"),
-orm = require("./config/orm.js"),
+// orm = require("./config/orm.js"),
 routes = require("./controllers/burgers_controller.js");
 
 
 
 var app = express();
-var port = 3000;
+var port = 3000 || process.env.port;
 
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
