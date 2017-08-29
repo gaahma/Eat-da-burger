@@ -10,7 +10,7 @@ routes = require("./controllers/burgers_controller.js");
 
 
 var app = express();
-var port = 3000 || process.env.port;
+var port = process.env.port || 3000;
 
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
